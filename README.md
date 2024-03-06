@@ -25,6 +25,9 @@ It is also injected into the encoder of SAM to enhance the representational capa
 ![image](https://github.com/WenjunHui1/TSP-SAM/assets/103172926/8cd26469-b7d7-453f-8b5b-498e697d4b78)
 
 
+https://github.com/WenjunHui1/TSP-SAM/assets/103172926/3d47857e-c93f-414b-9857-c06de3fb5f2e
+
+
 This is the official PyTorch implementation of our work "Endow SAM with Keen Eyes: Temporal-spatial Prompt Learning for Video Camouflaged Object Detection" accepted at CVPR 2024.
 
 _Code will be available soon._
