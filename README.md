@@ -32,7 +32,7 @@ Table evaluates TSP-SAM and the baselines on MoCA-Mask and CAD2016 datasets. The
 ![image](https://github.com/WenjunHui1/TSP-SAM/assets/103172926/8cd26469-b7d7-453f-8b5b-498e697d4b78)
 
 ## Dynamic presentation
-https://github.com/WenjunHui1/TSP-SAM/assets/103172926/3d47857e-c93f-414b-9857-c06de3fb5f2e
+https://github.com/WenjunHui1/TSP-SAM/assets/103172926/b3908367-96bf-47c6-9ca5-ea0b67ca827c
 
 # Cite us!
 ```
