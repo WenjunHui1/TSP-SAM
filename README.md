@@ -1,27 +1,14 @@
-# Endow SAM with Keen Eyes: Temporal-spatial Prompt Learning for Video Camouflaged Object Detection (CVPR 2024)
+# [CVPR2024] Endow SAM with Keen Eyes: Temporal-spatial Prompt Learning for Video Camouflaged Object Detection
 
 Wenjun Hui, Zhenfeng Zhu, Shuai Zheng, Yao Zhao
-
-```
-@InProceedings{hui2024endow,
-    author    = {Wenjun Hui, Zhenfeng Zhu, Shuai Zheng, Yao Zhao},
-    title     = {Endow SAM with Keen Eyes: Temporal-spatial Prompt Learning for Video Camouflaged Object Detection},
-    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-    month     = {June},
-    year      = {2024},
-}
-```
 
 # Method
 
 ![fig2_framework-v2](https://github.com/WenjunHui1/TSP-SAM/assets/103172926/13409a82-dfac-4855-b133-074a02e64b9a)
 
-## Weights and results
-The best checkpoint and the predicted masks are at https://drive.google.com/drive/folders/16SyoHOxT6QhNvaW31YSmr0_pXL0dL604?usp=drive_link.
+## Weights, results, environment
 
-## Envs
-
-https://drive.google.com/drive/folders/16SyoHOxT6QhNvaW31YSmr0_pXL0dL604?usp=drive_link
+The best checkpoint, the predicted masks and the environment are at https://drive.google.com/drive/folders/16SyoHOxT6QhNvaW31YSmr0_pXL0dL604?usp=drive_link.
 
 ## Evaluation
 
@@ -40,3 +27,18 @@ Table evaluates TSP-SAM and the baselines on MoCA-Mask and CAD2016 datasets. The
 
 ## Presentation
 https://github.com/WenjunHui1/TSP-SAM/assets/103172926/b3908367-96bf-47c6-9ca5-ea0b67ca827c
+
+## Citation 
+
+If you use TSP-SAM in your research or wish to refer to the baseline results published in the Model Zoo, please use the following BibTeX entry.
+
+```
+@InProceedings{hui2024endow,
+    author    = {Wenjun Hui, Zhenfeng Zhu, Shuai Zheng, Yao Zhao},
+    title     = {Endow SAM with Keen Eyes: Temporal-spatial Prompt Learning for Video Camouflaged Object Detection},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+}
+```
+
