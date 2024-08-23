@@ -1,0 +1,1 @@
+from .short_term_model import VideoModel as VideoModel_pvtv2
