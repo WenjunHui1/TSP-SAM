@@ -17,13 +17,11 @@ Wenjun Hui, Zhenfeng Zhu, Shuai Zheng, Yao Zhao
 ![fig2_framework-v2](https://github.com/WenjunHui1/TSP-SAM/assets/103172926/13409a82-dfac-4855-b133-074a02e64b9a)
 
 ## Weights and results
-The best checkpoint: https://drive.google.com/drive/folders/1IhrTfkOOJi8HCiVIWyT_82S2xSrAiHB9?usp=drive_link
-
-The predicted masks: https://drive.google.com/drive/folders/1nmPpToxGJMfNLB6A6FlsDnIBvNQBZaqV
+The best checkpoint and the predicted masks are at https://drive.google.com/drive/folders/16SyoHOxT6QhNvaW31YSmr0_pXL0dL604?usp=drive_link.
 
 ## Envs
 
-https://drive.google.com/drive/folders/16MFqSWpahmvSJQR9EmzPFpVdOzZu404t?usp=drive_link
+https://drive.google.com/drive/folders/16SyoHOxT6QhNvaW31YSmr0_pXL0dL604?usp=drive_link
 
 ## Evaluation
 
