@@ -19,6 +19,15 @@ It is also injected into the encoder of SAM to enhance the representational capa
 
 (c) Temporal-spatial injection for representation enhancement. To enhance the representational capabilities of SAM, the long-range temporal-spatial consistency Xc(t) is injected into the image embedding Xe(t) of SAM, contributing to more precise detection.
 
+## Evaluation
+
+```shell
+./env/bin/python main.py
+```
+> [!note]
+>
+> Evaluating performance on the VCOD dataset directly using training scripts is consistent with the previous work [SLT-Net](https://github.com/XuelianCheng/SLT-Net). 
+
 # Results
 ![image](https://github.com/WenjunHui1/TSP-SAM/assets/103172926/340bd300-8a79-452b-8c31-568a25f64a36)
 Table evaluates TSP-SAM and the baselines on MoCA-Mask and CAD2016 datasets. The conclusion is:
