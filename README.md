@@ -9,6 +9,16 @@ Firstly, motion-driven self-prompt learning is employed to capture the camouflag
 Subsequently, to eliminate the prompt bias resulting from inter-frame discontinuities, the long-range consistency within the video sequences is taken into account to promote the robustness of the self-prompts. 
 It is also injected into the encoder of SAM to enhance the representational capabilities. Extensive experimental results on two benchmarks demonstrate that the proposed TSP-SAM achieves a significant improvement over the state-of-the-art methods. With the mIoU metric increasing by 7.8% and 9.6%, TSP-SAM emerges as a groundbreaking step forward in the field of VCOD.
 
+```
+@InProceedings{hui2024endow,
+    author    = {Wenjun Hui, Zhenfeng Zhu, Shuai Zheng, Yao Zhao},
+    title     = {Endow SAM with Keen Eyes: Temporal-spatial Prompt Learning for Video Camouflaged Object Detection},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+}
+```
+
 # Method
 
 ![fig2_framework-v2](https://github.com/WenjunHui1/TSP-SAM/assets/103172926/13409a82-dfac-4855-b133-074a02e64b9a)
@@ -26,7 +36,9 @@ It is also injected into the encoder of SAM to enhance the representational capa
 ```
 > [!note]
 >
-> Evaluating performance on the VCOD dataset directly using training scripts is consistent with the previous work [SLT-Net](https://github.com/XuelianCheng/SLT-Net). 
+> Evaluating performance on the VCOD dataset directly using training scripts is consistent with the previous work [SLT-Net](https://github.com/XuelianCheng/SLT-Net).
+
+
 
 # Results
 ![image](https://github.com/WenjunHui1/TSP-SAM/assets/103172926/340bd300-8a79-452b-8c31-568a25f64a36)
@@ -37,20 +49,5 @@ Table evaluates TSP-SAM and the baselines on MoCA-Mask and CAD2016 datasets. The
 
 (iii) compared with video object segmentation methods, TSP-SAM achieves the best performance. Notably, TSP-SAM exhibits a 1.3% - 8.7% improvement over [5] on MoCA-Mask dataset, meaning that the temporal-spatial exploration in TSP-SAM is more effective compared to that in SLTNet.
 
-## Qualitative evaluation
-![image](https://github.com/WenjunHui1/TSP-SAM/assets/103172926/8cd26469-b7d7-453f-8b5b-498e697d4b78)
-
-## Dynamic presentation
+## Presentation
 https://github.com/WenjunHui1/TSP-SAM/assets/103172926/b3908367-96bf-47c6-9ca5-ea0b67ca827c
-
-# Cite us!
-```
-@InProceedings{hui2024endow,
-    author    = {Wenjun Hui, Zhenfeng Zhu, Shuai Zheng, Yao Zhao},
-    title     = {Endow SAM with Keen Eyes: Temporal-spatial Prompt Learning for Video Camouflaged Object Detection},
-    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-    month     = {June},
-    year      = {2024},
-}
-```
-_Code will be available soon._
