@@ -8,7 +8,7 @@ Wenjun Hui, Zhenfeng Zhu, Shuai Zheng, Yao Zhao
 
 ## Weights, results, environment
 
-The best checkpoint, the predicted masks and the environment are at https://drive.google.com/drive/folders/16SyoHOxT6QhNvaW31YSmr0_pXL0dL604?usp=drive_link.
+The best checkpoint, the predicted masks and the environment are at https://drive.google.com/drive/folders/16SyoHOxT6QhNvaW31YSmr0_pXL0dL604?usp=sharing.
 
 ## Evaluation
 
