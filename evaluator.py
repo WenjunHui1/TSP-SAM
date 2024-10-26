@@ -25,13 +25,13 @@ class Eval_thread():
 
     def run(self):
         start_time = time.time()
-        max_f, mean_f, adp_f = self.Eval_Fmeasure()
+        
         mae = self.Eval_MAE()
         s_alpha05 = self.Eval_Smeasure(alpha=0.5)
         max_e, mean_e, adp_e = self.Eval_Emeasure()
         meandice, meaniou = self.Eval_DICEIOU()
         
-        return s_alpha05, mean_e, mae, meandice, meaniou # ,adp_f, max_e,,adp_e, 
+        return s_alpha05, mean_e, mae, meandice, meaniou  
         
 
     def Eval_MAE(self):
@@ -58,56 +58,6 @@ class Eval_thread():
             # print('\n')
             return avg_mae.item()
     
-    def Eval_Fmeasure(self):
-        fLog = open(self.logdir + '/' + self.dataset + '_' + self.method + '_FMeasure' + '.txt', 'w')
-        # print('Eval [{:6}] Dataset [Fmeasure] with [{}] Method.'.format(self.dataset, self.method))
-        beta2 = 0.3
-        avg_f, img_num = 0.0, 0
-        adp_f=0.0
-        score = torch.zeros(255)
-        prec_avg=torch.zeros(255)
-        recall_avg=torch.zeros(255)
-        with torch.no_grad():
-            trans = transforms.Compose([transforms.ToTensor()])
-            for pred, gt, img_id in self.loader:
-                if self.cuda:
-                    pred = trans(pred).cuda()
-                    gt = trans(gt).cuda()
-                    prec_avg=prec_avg.cuda()
-                    recall_avg=recall_avg.cuda()
-                else:
-                    pred = trans(pred)
-                    gt = trans(gt)
-
-                # examples with totally black GTs are out of consideration
-                if torch.mean(gt) == 0.0:
-                    continue
-
-                prec, recall = self._eval_pr(pred, gt, 255)
-                prec_avg+=prec
-                recall_avg+=recall
-                f_score = (1 + beta2) * prec * recall / (beta2 * prec + recall+1e-20)
-                f_score[f_score != f_score] = 0 # for Nan
-                avg_f += f_score
-                adp_f+=self._eval_adp_f_measure(pred,gt)
-                img_num += 1
-                score = avg_f / img_num
-                # print("{} done".format(img_num))
-                fLog.write(img_id + '  ' + str(f_score.max().item()) + '\n')
-            for i in range(255):
-                fLog.write(str(score[i].item()) + '\n')
-            fLog.close()
-            prec_avg/=img_num
-            recall_avg/=img_num
-            avg_f/=img_num
-            pr_array=np.hstack((prec_avg.detach().cpu().numpy().reshape(-1, 1), recall_avg.detach().cpu().numpy().reshape(-1, 1)))
-            fm_array=(avg_f.detach().cpu().numpy().reshape(-1, 1))
-            np.savetxt(os.path.join(self.curve_cache_dir,'pr.txt'),pr_array)
-            np.savetxt(os.path.join(self.curve_cache_dir, 'fm.txt'), fm_array)
-            # print('\n')
-
-            return score.max().item(), score.mean().item(),(adp_f/img_num).item()
-
     def Eval_Emeasure(self):
         fLog = open(self.logdir + '/' + self.dataset + '_' + self.method + '_EMeasure' + '.txt', 'w')
         # print('Eval [{:6}] Dataset [Emeasure] with [{}] Method.'.format(self.dataset, self.method))
