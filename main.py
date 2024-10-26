@@ -50,28 +50,6 @@ def val(test_loader, model):
                 out_sam = post_process(out_sam)
 
                 imageio.imwrite(sam_path + name.replace('jpg', 'png'), img_as_ubyte(out_sam))
-                
-        evaluate('./pred/', opt.test_path, method='TSP-SAM')
-
-
-def evaluate(pred_dir, gt_dir, method):
-    
-    s_alpha05, mean_e, mae, meandice, meaniou = 0.0, 0.0, 0.0, 0.0, 0.0
-
-    dataset = 'MoCA'
-    scenes = sorted(os.listdir(pred_dir))
-    cnt = 0
-    for scene in tqdm(scenes):
-        loader = EvalDataset(osp.join(pred_dir, scene), osp.join(gt_dir, scene))
-        thread = Eval_thread(loader, 'cod', dataset, './score')
-        s_alpha05_s, mean_e_s, mae_s, meandice_s, meaniou_s  = thread.run()
-        s_alpha05 += s_alpha05_s 
-        mean_e += mean_e_s
-        mae += mae_s
-        meandice += meandice_s
-        meaniou += meaniou_s
-        cnt += 1
-    print(f'{method} : s_alpha05 {s_alpha05/len(scenes)} | mean_e {mean_e/len(scenes)} | mae {mae/len(scenes)}| meandice {meandice/len(scenes)} | meaniou {meaniou/len(scenes)}')
 
 
 if __name__ == '__main__':
